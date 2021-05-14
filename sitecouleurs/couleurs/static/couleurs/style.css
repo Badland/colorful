@@ -1,0 +1,13 @@
+h1 {
+  color: red;
+}
+
+.box {
+  margin: 30px;
+  width: 100px;
+  height: 100px;
+  }
+
+button:hover {
+    background-color: lightgrey;
+}

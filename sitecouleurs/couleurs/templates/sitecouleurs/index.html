@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="fr">
+<head>
+
+{% load static %}
+
+
+<link rel="stylesheet" type="text/css" href="{% static 'couleurs/style.css' %}">
+    <meta charset="utf-8">
+    <title>Kaleidos</title>
+</head>
+
+<body>
+    
+    <h1>Quelle est cette couleur?</h1>
+
+<form method="post" action="">
+{% csrf_token %}
+
+{% for choice in listavailable %}
+<div class="box" style="background-color: rgb({{choice.r}},{{choice.g}},{{choice.b}});"></div>
+<select name={{choice.id}} id={{choice.id}}>
+  <option value={{shuffled.0.id}}>{{shuffled.0.name}}</option>
+  <option value={{shuffled.1.id}}>{{shuffled.1.name}}</option>
+  <option value={{shuffled.2.id}}>{{shuffled.2.name}}</option>
+</select>
+{%endfor%}
+
+<input type="submit" value="Valider mon choix"/>
+
+</form>
+
+
+
+
+</body>
+
+</html>

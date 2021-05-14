@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="fr">
+<head>
+
+{% load static %}
+
+
+<link rel="stylesheet" type="text/css" href="{% static 'couleurs/style.css' %}">
+    <meta charset="utf-8">
+    <title>Kaleidos:réponse</title>
+</head>
+
+<body>
+    
+    <h1>Votre score : {{roundscore}}</h1>
+    <p> score total : {{totalscore}} </p>
+    <p> score moyen: {{average}} </p>
+
+
+
+{% for a,b in zipped%}
+<div class="box" style="background-color: rgb({{a.r}},{{a.g}},{{a.b}});"></div>
+<p> votre réponse :{{b.name}}</p>
+<p> la réponse : {{a.name}} </p>
+{%endfor%}
+
+<a href='/couleurs/'>continuer</a>
+
+
+</body>
+
+</html>
